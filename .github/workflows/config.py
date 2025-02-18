@@ -1,0 +1,2 @@
+API_BASE_URL = "https://api.com"
+BOT_TOKEN = "DISCORD_BOT_TOKEN"
