@@ -8,7 +8,7 @@ API_BASE_URL = "https://yourapi.com"  # Replace with the actual API  URL
 BOT_TOKEN = "YOUR_DISCORD_BOT_TOKEN"  # Replace with the actual bot token
 
 intents = discord.Intents.default()
-bot = commands.Bot(command_prefix="!", intents=intents)
+bot = commands.Bot(intents=intents)
 
 @bot.event
 async def on_ready():
