@@ -4,8 +4,8 @@ from discord.ext import commands
 import requests
 
 # ----- Configuration -----
-API_BASE_URL = "https://yourapi.com"  # Replace with your actual API base URL
-BOT_TOKEN = "YOUR_DISCORD_BOT_TOKEN"  # Replace with your actual bot token
+API_BASE_URL = "https://yourapi.com"  # Replace with the actual API  URL
+BOT_TOKEN = "YOUR_DISCORD_BOT_TOKEN"  # Replace with the actual bot token
 
 intents = discord.Intents.default()
 bot = commands.Bot(command_prefix="!", intents=intents)
