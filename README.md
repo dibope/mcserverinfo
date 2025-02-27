@@ -4,6 +4,7 @@ This Discord bot helps manage and monitor Minecraft servers using API endpoints.
 
 ## Setup
 Import **bot.py, requirements.txt, .env** in your bot's server
+
 Install Dependencies:
 
 Make sure you have Python installed, then run:
