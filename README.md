@@ -1,4 +1,4 @@
-# mcstatus
+# Minecraft server Inspection Bot
 
 This Discord bot helps manage and monitor Minecraft servers using API endpoints.
 
@@ -22,7 +22,7 @@ API_URL_LOGS = https://yourapi.com/servers/logs/
 
 API_URL_INSPECT = https://yourapi.com/servers/inspect/
 
-# In Discord and Discord develepor portal
+## In Discord and Discord develepor portal
 
 In the Discord Developer Portal, your bot needs the **Message Content Intent** enabled under **Privileged Gateway Intents**. After that, go to **OAuth2**, and under **Scopes**, select **bot** and **applications.commands**.
 
