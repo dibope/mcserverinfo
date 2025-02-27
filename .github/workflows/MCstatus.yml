@@ -1,4 +1,4 @@
-name: Minecraft Server inscpection Bot
+name: Minecraft Server Inspection Bot
 
 on:
   push:
@@ -36,3 +36,6 @@ jobs:
         env:
           API_BASE_URL: ${{ secrets.API_BASE_URL }}  # Store API base URL, token as GitHub Secrets
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}  
+          API_URL_LIST: ${{ secrets.API_URL_LIST }}
+          API_URL_LOGS: ${{ secrets.API_URL_LOGS }}
+          API_URL_INSPECT: ${{ secrets.API_URL_INSPECT }}
