@@ -2,10 +2,13 @@ import discord
 from discord import app_commands
 from discord.ext import commands
 import requests
+import os
 
 # ----- Configuration -----
-API_BASE_URL = "https://yourapi.com"  # Replace with the actual API  URL
-BOT_TOKEN = "YOUR_DISCORD_BOT_TOKEN"  # Replace with the actual bot token
+API_URL_LIST = os.getenv("API_URL_LIST",)
+API_URL_LOGS = os.getenv("API_URL_LOGS",)
+API_URL_INSPECT = os.getenv("API_URL_INSPECT",)
+BOT_TOKEN = os.getenv("BOT_TOKEN",)
 
 intents = discord.Intents.default()
 bot = commands.Bot(intents=intents)
@@ -22,10 +25,10 @@ async def on_ready():
 # ----- /list Command -----
 @bot.tree.command(name="list", description="List all currently running Minecraft servers")
 async def list_servers(interaction: discord.Interaction):
-    response = requests.get(f"{API_BASE_URL}/servers/list")
+    response = requests.get(API_URL_LIST)
     
     if response.status_code == 200:
-        await interaction.response.send_message(response.text)  # Directly send API response
+        await interaction.response.send_message(response.text)
     else:
         await interaction.response.send_message("Failed to retrieve server list.", ephemeral=True)
 
@@ -33,10 +36,10 @@ async def list_servers(interaction: discord.Interaction):
 @bot.tree.command(name="inspect", description="Get details of a specific Minecraft server")
 @app_commands.describe(server_id="The ID of the server to inspect")
 async def inspect_server(interaction: discord.Interaction, server_id: str):
-    response = requests.get(f"{API_BASE_URL}/servers/inspect/{server_id}")
+    response = requests.get(f"{API_URL_INSPECT}{server_id}")
     
     if response.status_code == 200:
-        await interaction.response.send_message(response.text)  # Directly send API response
+        await interaction.response.send_message(response.text)
     else:
         await interaction.response.send_message("Server not found or failed to fetch details.", ephemeral=True)
 
@@ -44,10 +47,10 @@ async def inspect_server(interaction: discord.Interaction, server_id: str):
 @bot.tree.command(name="logs", description="Retrieve the last 50 logs of a Minecraft server")
 @app_commands.describe(server_id="The ID of the server to fetch logs for")
 async def get_logs(interaction: discord.Interaction, server_id: str):
-    response = requests.get(f"{API_BASE_URL}/servers/logs/{server_id}")
+    response = requests.get(f"{API_URL_LOGS}{server_id}")
     
     if response.status_code == 200:
-        await interaction.response.send_message(f"```{response.text}```")  # Directly send logs
+        await interaction.response.send_message(f"```{response.text}```")
     else:
         await interaction.response.send_message("Failed to retrieve logs.", ephemeral=True)
 
