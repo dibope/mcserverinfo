@@ -31,4 +31,4 @@ In **Bot Permissions**, ensure you grant **Read Messages**, **Send Messages**, a
 
 After adding the bot to your server, go to **Server Settings → Integrations**. There, you can assign a moderator role to use the bot's commands.
 
-If the commands do not appear, run the bot to register them.
+If the commands do not appear, run the bot (prefarebly in a test discord server) to register them.
