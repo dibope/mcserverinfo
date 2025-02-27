@@ -2,7 +2,17 @@
 
 This Discord bot helps manage and monitor Minecraft servers using API endpoints.
 
-Before running the bot, ensure you set the following environment variables or repository secrects:
+## setup
+Import **bot.py, requirements.txt, .env** in your bot's server
+Install Dependencies
+
+Make sure you have Python installed, then run:
+
+'''
+pip install -r requirements.txt
+'''
+
+Before running the bot, ensure you update the following environment variables:
 
 BOT_TOKEN = our_discord_bot_token
 
@@ -14,10 +24,10 @@ API_URL_INSPECT = https://yourapi.com/servers/inspect/
 
 # In Discord and Discord develepor portal
 
-In the Discord Developer Portal, your bot needs the Message Content Intent enabled under Privileged Gateway Intents. After that, go to OAuth2, and under Scopes, select bot and applications.commands.
+In the Discord Developer Portal, your bot needs the **Message Content Intent** enabled under **Privileged Gateway Intents**. After that, go to **OAuth2**, and under **Scopes**, select **bot** and **applications.commands**.
 
-In Bot Permissions, ensure you grant Read Messages, Send Messages, and Manage Messages.
+In **Bot Permissions**, ensure you grant **Read Messages**, **Send Messages**, and **Manage Messages**.
 
-After adding the bot to your server, go to Server Settings → Integrations. There, you can assign a moderator role to use the bot's commands.
+After adding the bot to your server, go to **Server Settings → Integrations**. There, you can assign a moderator role to use the bot's commands.
 
 If the commands do not appear, run the bot to register them.
